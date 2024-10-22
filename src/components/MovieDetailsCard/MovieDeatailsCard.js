@@ -14,6 +14,7 @@ import {
 const MovieDetailsCard = ({ movies }) => {
   const { title, poster_path, vote_average, overview, genres } = movies;
   const allGenres = genres ? genres.map(genre => genre.name).join(', ') : [];
+  console.log(genres);
   const defaultImg =
     'https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg';
   const posterBasePath = 'https://image.tmdb.org/t/p/w500';
