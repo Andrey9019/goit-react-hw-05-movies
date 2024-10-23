@@ -26,7 +26,7 @@ const MoviesList = ({ movies }) => {
   const location = useLocation();
 
   return (
-    <section className="text-center">
+    <section className="">
       <ul className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-4 p-0 list-none m-0">
         {movies.map(({ id, title, poster_path, vote_average, genre_ids }) => {
           // Отримуємо назви жанрів, відображаємо максимум 3
@@ -44,7 +44,7 @@ const MoviesList = ({ movies }) => {
               <Link
                 to={`/movies/${id}`}
                 state={{ from: location }}
-                className="block text-inherit no-underline"
+                className=" text-inherit no-underline"
               >
                 <img
                   src={
@@ -52,14 +52,23 @@ const MoviesList = ({ movies }) => {
                   }
                   alt={title}
                   width="200"
-                  className="object-cover w-full h-full"
+                  className="object-cover w-full "
                 />
-                <div className="p-4 text-lg font-medium text-white bg-[rgba(0,0,0,0.4)] absolute bottom-0 left-0 w-full box-border">
-                  <p className="mb-1">{title}</p>
+
+                <div className="p-1 font-normal text-gray-700">
+                  <p className="text-sm font-medium mb-1 md:text-lg lg:text-xl md:font-semibold">
+                    {title}
+                  </p>
                   {vote_average > 0 && (
-                    <p className="text-sm">Rating: {vote_average.toFixed(1)}</p>
+                    <p className="text-xs md:text-base lg:text-lg md:font-normal">
+                      Rating: {vote_average.toFixed(1)}
+                    </p>
                   )}
-                  {allGenres && <p className="text-sm">Genres: {allGenres}</p>}
+                  {allGenres && (
+                    <p className="text-xs md:text-sm lg:text-base md:font-normal">
+                      Genres: {allGenres}
+                    </p>
+                  )}
                 </div>
               </Link>
             </li>

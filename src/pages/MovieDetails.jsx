@@ -1,10 +1,10 @@
-import { useParams, useLocation, Outlet } from 'react-router-dom';
-import React, { useEffect, useState, Suspense, useRef } from 'react';
+import { useParams, Outlet } from 'react-router-dom';
+import React, { useEffect, useState, Suspense } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
 import { fetchMoviesById } from '../utils/Api';
 import Loader from '../components/Loader/Loader';
-import BackLink from 'components/BackLink/BackLink';
+
 import MovieDetailsCard from 'components/MovieDetailsCard/MovieDeatailsCard';
 
 const MovieDetails = () => {
@@ -13,8 +13,6 @@ const MovieDetails = () => {
   const [error, setError] = useState(false);
 
   const { movieId } = useParams();
-  const location = useLocation();
-  const backLinkHref = useRef(location.state?.from ?? '/Movies');
 
   useEffect(() => {
     const controller = new AbortController();
@@ -48,7 +46,6 @@ const MovieDetails = () => {
         {loading && <Loader />}
         {error &&
           toast.error(`Oops, something went wrong. Try reloading the page`)}
-        <BackLink to={backLinkHref.current} />
         {movies && <MovieDetailsCard movies={movies} />}
         <Suspense fallback={<Loader />}>
           <Outlet />
