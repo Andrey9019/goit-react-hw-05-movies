@@ -55,9 +55,8 @@ const Movies = () => {
       {loading && <Loader />}
       {error &&
         toast.error(`Oops, something went wrong. Try reloading the page`)}
-      <Form onSubmit={onSubmit} />
-      {movies.length === 0 && <p>No results</p>}
-      <MoviesList movies={movies} />
+      <Form onSubmit={onSubmit} hasResults={movies.length > 0} />{' '}
+      {movies.length > 0 && <MoviesList movies={movies} />}
       <ToastContainer autoClose={4000} theme="colored" />
     </main>
   );

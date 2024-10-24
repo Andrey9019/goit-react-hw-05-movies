@@ -4,8 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faComment } from '@fortawesome/free-solid-svg-icons';
 
 const MovieDetailsCard = ({ movies }) => {
-  const { title, poster_path, vote_average, overview, genres } = movies;
+  const { title, poster_path, vote_average, overview, genres, release_date } =
+    movies;
   const allGenres = genres ? genres.map(genre => genre.name).join(', ') : [];
+  const formatDate = dateString => {
+    const date = new Date(dateString);
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    return date.toLocaleDateString('uk-UA', options);
+  };
+
   const defaultImg =
     'https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg';
   const posterBasePath = 'https://image.tmdb.org/t/p/w500';
@@ -33,7 +40,6 @@ const MovieDetailsCard = ({ movies }) => {
               </p>
               {/* тут нужно будет что-то со смайликами придумать */}
             </li>
-
             <li className="flex flex-col items-start mb-3 sm:justify-start ">
               <h3 className=" text-xl font-bold lg:text-3xl">
                 What the movie is about:
@@ -42,13 +48,20 @@ const MovieDetailsCard = ({ movies }) => {
                 {overview !== '' ? overview : 'No overview provided'}
               </p>
             </li>
-
             <li className="flex justify-center sm:justify-start gap-2 mb-3">
               <h3 className=" text-xl lg:text-2xl font-bold">Genres:</h3>
               <p className=" text-lg lg:text-2xl">
                 {allGenres !== '' ? allGenres : 'No genres provided'}
               </p>
             </li>
+            <li className="flex sm:justify-start gap-2 mb-3">
+              <h3 className="text-xl lg:text-2xl font-bold">Release Date:</h3>
+              <p className="text-lg lg:text-2xl">
+                {release_date
+                  ? formatDate(release_date)
+                  : 'No release date yet'}
+              </p>
+            </li>{' '}
           </ul>
         </div>
       </div>

@@ -3,16 +3,15 @@ import { useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { fetchReview } from '../../utils/Api';
-import { Container, Author, Text, List, Item } from './Review.styled';
 import Loader from '../Loader/Loader';
 
 const Review = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [reviews, setReview] = useState([]);
-  console.log(reviews);
 
   const { movieId } = useParams();
+
   useEffect(() => {
     const controller = new AbortController();
 
@@ -40,27 +39,30 @@ const Review = () => {
   }, [movieId]);
 
   return (
-    <Container>
+    <div className="max-w-screen-lg mx-auto mb-24 p-5 bg-gray-400 shadow-lg rounded-md">
       {loading && <Loader />}
       {error &&
         toast.error(`Whoops, something went wrong. Try reloading the page`)}
       {reviews.length > 0 ? (
-        <List>
+        <ul className="list-none p-0 m-0">
           {reviews.map(review => {
             const { content, author } = review;
             return (
-              <Item key={author}>
-                <Author>{author}</Author>
-                <Text>{content}</Text>
-              </Item>
+              <li
+                key={author}
+                className="my-3 p-4 bg-gray-300 shadow-md rounded-md"
+              >
+                <h3 className="font-bold mb-1 lg:text-xl">{author}</h3>
+                <p className=" text-sm lg:text-lg">{content}</p>
+              </li>
             );
           })}
-        </List>
+        </ul>
       ) : (
-        <Text>There is no review for this movie</Text>
+        <p className=" text-lg">There is no review for this movie</p>
       )}
       <ToastContainer autoClose={4000} theme="colored" />
-    </Container>
+    </div>
   );
 };
 
