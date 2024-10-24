@@ -20,26 +20,32 @@ const MovieDetailsCard = ({ movies }) => {
             className="max-h-[350px] lg:max-h-[500px] object-cover rounded-lg"
           />
         </div>
-        <div className="flex flex-col justify-center gap-5 flex-1">
-          <h2 className="text-center text-4xl font-bold">{title}</h2>
+        <div className="flex flex-col justify-center lg:justify-around gap-5 flex-1">
+          <h2 className="text-center text-4xl font-bold lg:text-7xl">
+            {title}
+          </h2>
 
-          <ul className="list-none p-0 m-0 text-center flex-col">
-            <li className="flex justify-center sm:justify-start gap-2 mb-3">
-              <h3 className=" text-xl ">User score:</h3>
-              <p className=" text-lg">{Math.round(vote_average * 10)}%</p>
+          <ul className="list-none p-0 m-0 text-center flex-col ">
+            <li className="flex justify-center sm:justify-start gap-2 mb-3 ">
+              <h3 className=" text-xl lg:text-3xl">User score:</h3>
+              <p className=" text-lg lg:text-3xl">
+                {Math.round(vote_average * 10)}%
+              </p>
               {/* тут нужно будет что-то со смайликами придумать */}
             </li>
 
             <li className="flex flex-col items-start mb-3 sm:justify-start ">
-              <h3 className=" text-xl font-bold">What the movie is about:</h3>
-              <p className=" text-lg">
+              <h3 className=" text-xl font-bold lg:text-3xl">
+                What the movie is about:
+              </h3>
+              <p className=" text-lg lg:text-2xl">
                 {overview !== '' ? overview : 'No overview provided'}
               </p>
             </li>
 
             <li className="flex justify-center sm:justify-start gap-2 mb-3">
-              <h3 className=" text-xl font-bold">Genres:</h3>
-              <p className=" text-lg">
+              <h3 className=" text-xl lg:text-2xl font-bold">Genres:</h3>
+              <p className=" text-lg lg:text-2xl">
                 {allGenres !== '' ? allGenres : 'No genres provided'}
               </p>
             </li>

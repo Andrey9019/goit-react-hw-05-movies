@@ -42,7 +42,7 @@ const MovieDetails = () => {
 
   return (
     <main>
-      <div>
+      <div className="container">
         {loading && <Loader />}
         {error &&
           toast.error(`Oops, something went wrong. Try reloading the page`)}

@@ -26,8 +26,8 @@ const MoviesList = ({ movies }) => {
   const location = useLocation();
 
   return (
-    <section className="">
-      <ul className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-4 p-0 list-none m-0">
+    <section className="container">
+      <ul className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-4 p-3 list-none m-0">
         {movies.map(({ id, title, poster_path, vote_average, genre_ids }) => {
           // Отримуємо назви жанрів, відображаємо максимум 3
           const allGenres = genre_ids
@@ -54,7 +54,6 @@ const MoviesList = ({ movies }) => {
                   width="200"
                   className="object-cover w-full "
                 />
-
                 <div className="p-1 font-normal text-gray-700">
                   <p className="text-sm font-medium mb-1 md:text-lg lg:text-xl md:font-semibold">
                     {title}

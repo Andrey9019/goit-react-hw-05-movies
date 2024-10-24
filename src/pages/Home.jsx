@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import MoviesList from '../components/MoviesList/MoviesList';
 import Loader from '../components/Loader/Loader';
-import { Title } from 'utils/Home.styled';
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
@@ -37,7 +36,9 @@ const Home = () => {
 
   return (
     <>
-      <Title>Trending movies</Title>
+      <h1 className="text-4xl font-bold mt-2 mb-5 text-gray-800 text-center">
+        Trending movies
+      </h1>
 
       {loading && <Loader />}
       {error &&
