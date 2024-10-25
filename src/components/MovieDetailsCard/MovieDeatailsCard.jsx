@@ -2,6 +2,22 @@ import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faComment } from '@fortawesome/free-solid-svg-icons';
+import {
+  FaSadTear,
+  FaFrown,
+  FaMeh,
+  FaSmile,
+  FaLaughBeam,
+} from 'react-icons/fa';
+
+const getEmojiForScore = score => {
+  if (score === 0 || score == null) return null; // Відсутній рейтинг
+  if (score >= 90) return <FaLaughBeam className="text-green-500" />; // Дуже високий рейтинг
+  if (score >= 70) return <FaSmile className="text-green-400" />; // Високий рейтинг
+  if (score >= 50) return <FaMeh className="text-yellow-500" />; // Середній рейтинг
+  if (score >= 30) return <FaFrown className="text-orange-500" />; // Низький рейтинг
+  return <FaSadTear className="text-red-500" />; // Дуже низький рейтинг
+};
 
 const MovieDetailsCard = ({ movies }) => {
   const { title, poster_path, vote_average, overview, genres, release_date } =
@@ -12,7 +28,7 @@ const MovieDetailsCard = ({ movies }) => {
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
     return date.toLocaleDateString('uk-UA', options);
   };
-
+  const score = Math.round(vote_average * 10);
   const defaultImg =
     'https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg';
   const posterBasePath = 'https://image.tmdb.org/t/p/w500';
@@ -31,20 +47,19 @@ const MovieDetailsCard = ({ movies }) => {
           <h2 className="text-center text-4xl font-bold lg:text-7xl">
             {title}
           </h2>
-
           <ul className="list-none p-0 m-0 text-center flex-col ">
-            <li className="flex justify-center sm:justify-start gap-2 mb-3 ">
-              <h3 className=" text-xl lg:text-3xl">User score:</h3>
-              <p className=" text-lg lg:text-3xl">
-                {Math.round(vote_average * 10)}%
+            <li className="flex justify-center sm:justify-start gap-2 mb-3 items-center">
+              <h3 className="text-xl lg:text-3xl">User score:</h3>
+              <p className="text-lg lg:text-3xl">
+                {score > 0 ? `${score}%` : 'No rating yet'}
               </p>
-              {/* тут нужно будет что-то со смайликами придумать */}
+              <p className="text-xl lg:text-2xl">{getEmojiForScore(score)}</p>
             </li>
             <li className="flex flex-col items-start mb-3 sm:justify-start ">
               <h3 className=" text-xl font-bold lg:text-3xl">
                 What the movie is about:
               </h3>
-              <p className=" text-lg lg:text-2xl">
+              <p className=" text-lg lg:text-xl">
                 {overview !== '' ? overview : 'No overview provided'}
               </p>
             </li>

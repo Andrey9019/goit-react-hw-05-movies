@@ -29,11 +29,10 @@ const MoviesList = ({ movies }) => {
     <section className="container">
       <ul className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-4 p-3 list-none m-0">
         {movies.map(({ id, title, poster_path, vote_average, genre_ids }) => {
-          // Отримуємо назви жанрів, відображаємо максимум 3
           const allGenres = genre_ids
             .map(id => genreNames[id])
-            .filter(Boolean) // Видаляємо undefined значення
-            .slice(0, 3) // Беремо перші три жанри
+            .filter(Boolean)
+            .slice(0, 3)
             .join(', ');
 
           return (
@@ -44,30 +43,34 @@ const MoviesList = ({ movies }) => {
               <Link
                 to={`/movies/${id}`}
                 state={{ from: location }}
-                className=" text-inherit no-underline"
+                className="block h-full w-full text-inherit no-underline"
               >
-                <img
-                  src={
-                    poster_path ? `${posterBaseURL}${poster_path}` : defaultImg
-                  }
-                  alt={title}
-                  width="200"
-                  className="object-cover w-full "
-                />
-                <div className="p-1 font-normal text-gray-700">
-                  <p className="text-sm font-medium mb-1 md:text-lg lg:text-xl md:font-semibold">
-                    {title}
-                  </p>
-                  {vote_average > 0 && (
-                    <p className="text-xs md:text-base lg:text-lg md:font-normal">
-                      Rating: {vote_average.toFixed(1)}
+                <div>
+                  <img
+                    src={
+                      poster_path
+                        ? `${posterBaseURL}${poster_path}`
+                        : defaultImg
+                    }
+                    alt={title}
+                    width="200"
+                    className="object-cover w-full"
+                  />
+                  <div className="p-1 font-normal text-gray-700">
+                    <p className="text-sm font-medium mb-1 md:text-lg lg:text-xl md:font-semibold">
+                      {title}
                     </p>
-                  )}
-                  {allGenres && (
-                    <p className="text-xs md:text-sm lg:text-base md:font-normal">
-                      Genres: {allGenres}
-                    </p>
-                  )}
+                    {vote_average > 0 && (
+                      <p className="text-xs md:text-base lg:text-lg md:font-normal">
+                        Rating: {vote_average.toFixed(1)}
+                      </p>
+                    )}
+                    {allGenres && (
+                      <p className="text-xs md:text-sm lg:text-base md:font-normal">
+                        Genres: {allGenres}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </Link>
             </li>
