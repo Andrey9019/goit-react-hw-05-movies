@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="py-4 shadow-[0px_6px_10px_8px_rgba(0,0,0,1)]">
+    <footer className="py-4 shadow-[0px_6px_10px_8px_rgba(0,0,0,1)] mt-5">
       <div className="container mx-auto text-center">
         <p className="mb-2">© 2025 Trending movies. All rights reserved.</p>
         <div className="flex justify-center space-x-4 mb-2">
