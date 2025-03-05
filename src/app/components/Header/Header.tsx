@@ -16,7 +16,7 @@ const Header = () => {
           <li>
             <Link
               href="/search"
-              className="no-underline  font-bold text-xl lg:text-2xl transition-colors duration-300 hover:text-orange-500 flex items-center space-x-2"
+              className="no-underline font-bold text-xl lg:text-2xl transition-colors duration-300 hover:text-orange-500 flex items-center space-x-2"
             >
               <span>Search Movies</span>
             </Link>

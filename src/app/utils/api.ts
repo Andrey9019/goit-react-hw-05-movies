@@ -15,6 +15,10 @@ const api = axios.create({
 
 // типізація відповіді
 
+export interface MoviesResponce {
+  results: Movie[];
+}
+
 export interface ApiResponse<T> {
   results: T[];
 }
@@ -35,23 +39,28 @@ export const fetchMoviesById = async (movieId: number): Promise<Movie> => {
 
 // фільми на сторінці movie
 
-export const fetchMoviesByQuery = async (query: string): Promise<Movie[]> => {
-  const response = await api.get<ApiResponse<Movie>>(`/search/movie`, {
-    params: { query },
-  });
-  return response.data.results;
-};
+// export const fetchMoviesByQuery = async (
+//   query: string
+// ): Promise<MoviesResponce> => {
+//   const response = await fetch(`/search/movie?query=${query}`);
+
+//   return response.json();
+// };
 
 // пошук ревью
 
 export const fetchReview = async (movieId: number) => {
   const response = await api.get(`/movie/${movieId}/reviews`);
-  return response.data.results;
+  console.log(response.data);
+
+  return response.data;
 };
 
 // пошук акторів
 
 export const fetchCast = async (movieId: number) => {
   const response = await api.get(`/movie/${movieId}/credits`);
-  return response.data.cast;
+  console.log(response.data);
+
+  return response.data;
 };

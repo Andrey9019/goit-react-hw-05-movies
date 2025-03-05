@@ -43,7 +43,7 @@ const MoviesList = ({ movies }: MoviesProps) => {
               className="relative rounded-md shadow-[0_2px_4px_rgba(0,0,0,0.3)] overflow-hidden transition-all duration-300 ease-in-out hover:shadow-[0_6px_8px_rgba(0,0,0,0.6)] hover:scale-105"
             >
               <Link
-                href={`/movies/${id}`}
+                href={`/details/${id}`}
                 className="block h-full w-full text-inherit no-underline"
               >
                 <div>
