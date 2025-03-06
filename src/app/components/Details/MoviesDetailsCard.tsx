@@ -107,7 +107,7 @@ export default function MovieDetailsCard({ movie }: MovieDetailsProps) {
           <li>
             <button
               onClick={() => setShowCast((prev) => !prev)}
-              className="text-2xl border border-black rounded-lg py-1 px-6 font-semibold transition duration-250 ease-in-out hover:text-[#ff5733] hover:border-[#ff5733] no-underline duration-300  flex items-center space-x-2"
+              className="text-2xl border border-black rounded-lg py-1 px-6 font-semibold transition  ease-in-out hover:text-[#ff5733] hover:border-[#ff5733] no-underline duration-300  flex items-center space-x-2"
             >
               <FaUser />
               <span>Cast</span>
@@ -117,7 +117,7 @@ export default function MovieDetailsCard({ movie }: MovieDetailsProps) {
           <li>
             <button
               onClick={() => setShowReview((prev) => !prev)}
-              className="text-2xl border border-black rounded-lg py-1 px-6 font-semibold transition duration-250 ease-in-out hover:text-[#ff5733] hover:border-[#ff5733] no-underline duration-300  flex items-center space-x-2"
+              className="text-2xl border border-black rounded-lg py-1 px-6 font-semibold transition  ease-in-out hover:text-[#ff5733] hover:border-[#ff5733] no-underline duration-300  flex items-center space-x-2"
             >
               <FaComment />
               <span>Review</span>
