@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { fetchMoviesById } from "../../utils/api";
-import { GetServerSideProps } from "next";
 
 import MovieDetailsCard from "../../components/Details/MoviesDetailsCard";
 
