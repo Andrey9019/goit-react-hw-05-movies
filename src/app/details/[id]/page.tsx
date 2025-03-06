@@ -1,14 +1,16 @@
 import { notFound } from "next/navigation";
 import { fetchMoviesById } from "../../utils/api";
-
 import MovieDetailsCard from "../../components/Details/MoviesDetailsCard";
 
-const MovieDetails = async ({
-  params,
-}: {
-  params: { id: string | string[] };
-}) => {
-  const id = Array.isArray(params.id) ? params.id[0] : params.id;
+// Тут ми використовуємо тип 'PageProps', який надається Next.js для динамічних сторінок
+type MovieDetailsProps = {
+  params: {
+    id: string; // expect id as a string (because Next.js params are always string)
+  };
+};
+
+const MovieDetails = async ({ params }: MovieDetailsProps) => {
+  const id = params.id;
 
   // Перетворюємо id на число
   const numericId = parseInt(id);
