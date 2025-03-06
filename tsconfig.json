@@ -3,6 +3,7 @@
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "types": ["node", "estree", "json-schema"],
+    "noEmitOnError": false,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
