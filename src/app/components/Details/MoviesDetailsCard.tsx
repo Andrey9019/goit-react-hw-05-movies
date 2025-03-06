@@ -19,6 +19,7 @@ import {
   FaLaughBeam,
 } from "react-icons/fa";
 import { FaUser, FaComment } from "react-icons/fa";
+import Image from "next/image";
 
 const getEmojiForScore = (score: number) => {
   if (score === 0 || score == null) return null; // Відсутній рейтинг
@@ -55,7 +56,7 @@ export default function MovieDetailsCard({ movie }: MovieDetailsProps) {
     <>
       <div className="md:flex justify-center gap-5 mb-5 p-5 max-w-screen-xl mx-auto">
         <div className="flex justify-center">
-          <img
+          <Image
             src={
               movie.poster_path
                 ? `${posterBasePath}${movie.poster_path}`

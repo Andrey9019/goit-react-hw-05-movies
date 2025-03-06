@@ -21,7 +21,7 @@ export default function Cast({ movieId }: CastProps) {
         const data = await fetchCast(movieId);
 
         setCast(data.cast?.slice(0, 12) || []);
-      } catch (error) {
+      } catch {
         toast.error("Whoops, something went wrong. Try reloading the page");
       } finally {
         setLoading(false);

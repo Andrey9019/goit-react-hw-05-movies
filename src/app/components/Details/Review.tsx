@@ -18,7 +18,7 @@ export default function Review({ movieId }: ReviewProps) {
       try {
         const data = await fetchReview(movieId);
         setReviews(data.results?.slice(0, 3) || []);
-      } catch (error) {
+      } catch {
         toast.error("Whoops, something went wrong. Try reloading the page");
       } finally {
         setLoading(false);

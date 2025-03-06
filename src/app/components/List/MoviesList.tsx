@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Movie from "../../types/interface";
+import Image from "next/image";
 
 interface MoviesProps {
   movies: Movie[];
@@ -47,7 +48,7 @@ export default function MoviesList({ movies }: MoviesProps) {
                 className="block h-full w-full text-inherit no-underline"
               >
                 <div>
-                  <img
+                  <Image
                     src={
                       poster_path
                         ? `${posterBaseURL}${poster_path}`

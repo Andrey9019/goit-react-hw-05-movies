@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface CastCardProp {
   actor: {
     name: string;
@@ -14,7 +16,7 @@ const CastCard = ({ actor }: CastCardProp) => {
 
   return (
     <div className="flex flex-col items-center bg-gray-300  p-4 lg:p-6 rounded-lg custom-shadow-card">
-      <img
+      <Image
         src={profile_path ? `${posterBasePath}${profile_path}` : defaultImg}
         alt={name}
         className="w-28 h-28 rounded-3xl mb-4 object-cover"
