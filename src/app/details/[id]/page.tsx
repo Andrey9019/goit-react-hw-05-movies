@@ -1,8 +1,6 @@
 import { notFound } from "next/navigation";
 import { fetchMoviesById } from "../../utils/api";
 
-// import Loader from "../components/Loader/Loader";
-
 import MovieDetailsCard from "../../components/Details/MoviesDetailsCard";
 
 interface MovieDetailsProps {
@@ -22,6 +20,6 @@ export default async function MovieDetails({ params }: MovieDetailsProps) {
     );
   } catch (error) {
     console.log(error);
-    // return notFound()
+    return notFound();
   }
 }

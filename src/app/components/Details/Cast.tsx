@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
 import { fetchCast } from "../../utils/api";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import CastCard from "./CastCard";
-
-// import Loader from "../Loader/Loader";
 
 interface CastProps {
   movieId: number;

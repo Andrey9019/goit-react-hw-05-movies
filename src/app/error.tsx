@@ -18,7 +18,7 @@ export default function Error({
       <h1 className="text-3xl font-bold text-red-600">
         Something went wrong 😢
       </h1>
-      <p className="mt-2">Don't worry, let's try again!</p>
+      <p className="mt-2">Don&lsquot worry, let&lsquos try again!</p>
       <button
         className="mt-4 px-4 py-2 bg-orange-500 text-white rounded-md"
         onClick={() => reset()}
