@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 Movie Explorer
 
-## Getting Started
+Movie Explorer – це інтерактивна веб-платформа для любителів кіно, де можна дізнатися більше про популярні фільми, їхні жанри, рейтинги, а також переглянути інформацію про акторів та рецензії.
 
-First, run the development server:
+## 📖 Огляд функцій
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Топ фільмів:** Переглядайте найпопулярніші фільми сьогодні, з інформацією про жанр, рейтинг та коротким описом.
+- **Детальна інформація:** Переходьте до сторінки з детальною інформацією про кожен фільм, де можна знайти:
+  - 🎥 **Жанр**
+  - ⭐️ **Рейтинг**
+  - 🎭 **Акторський склад**
+  - 📝 **Рецензії глядачів**
+  -
+- **Пошук фільмів:** Шукайте фільми за назвою, та дізнавайтеся більше про їхні жанри, рейтинг, акторів і навіть рецензії.
+- **Інтерактивний інтерфейс:** Приємні анімації для кращого користувацького досвіду.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🧩 Використані технології
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Font Awesome](https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=font-awesome&logoColor=white)
+![Testing Library](https://img.shields.io/badge/Testing_Library-E33332?style=for-the-badge&logo=testing-library&logoColor=white)
+![React Toastify](https://img.shields.io/badge/React_Toastify-F2790F?style=for-the-badge&logo=react-toastify&logoColor=white)
+![React Icons](https://img.shields.io/badge/React_Icons-4E8EE0?style=for-the-badge&logo=react&logoColor=white)
+![React Loader Spinner](https://img.shields.io/badge/Loader_Spinner-ffcc00?style=for-the-badge&logo=react&logoColor=black)

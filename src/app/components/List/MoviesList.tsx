@@ -26,7 +26,7 @@ const genreNames: { [key: number]: string } = {
   37: "Western",
 };
 
-const MoviesList = ({ movies }: MoviesProps) => {
+export default function MoviesList({ movies }: MoviesProps) {
   return (
     <section className="container">
       <ul className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-4 p-3 list-none m-0">
@@ -80,6 +80,4 @@ const MoviesList = ({ movies }: MoviesProps) => {
       </ul>
     </section>
   );
-};
-
-export default MoviesList;
+}

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import { mutate } from "swr";
+import { FaSearch } from "react-icons/fa";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
@@ -54,6 +55,7 @@ const Form = ({ initialQuery }: FormProps) => {
             className="border-none rounded-r-md cursor-pointer p-2"
           >
             {/* <FontAwesomeIcon icon={faMagnifyingGlass} /> */}
+            <FaSearch />
           </button>
         </div>
       </form>

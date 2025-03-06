@@ -43,7 +43,6 @@ export const fetchMoviesByQuery = async (query: string): Promise<Movie[]> => {
   const response = await api.get<ApiResponse<Movie>>(
     `/search/movie?query=${query}`
   );
-  console.log(response.data.results);
   return response.data.results;
 };
 
