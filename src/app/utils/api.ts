@@ -39,13 +39,13 @@ export const fetchMoviesById = async (movieId: number): Promise<Movie> => {
 
 // фільми на сторінці movie
 
-// export const fetchMoviesByQuery = async (
-//   query: string
-// ): Promise<MoviesResponce> => {
-//   const response = await fetch(`/search/movie?query=${query}`);
-
-//   return response.json();
-// };
+export const fetchMoviesByQuery = async (query: string): Promise<Movie[]> => {
+  const response = await api.get<ApiResponse<Movie>>(
+    `/search/movie?query=${query}`
+  );
+  console.log(response.data.results);
+  return response.data.results;
+};
 
 // пошук ревью
 
