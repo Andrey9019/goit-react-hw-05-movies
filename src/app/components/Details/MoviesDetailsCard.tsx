@@ -63,7 +63,13 @@ export default function MovieDetailsCard({ movie }: MovieDetailsProps) {
                 : defaultImg
             }
             alt={movie.title}
-            className="max-h-[350px] lg:max-h-[500px] object-cover rounded-lg"
+            width={300}
+            height={500}
+            style={{
+              maxWidth: "350px",
+              maxHeight: "500px",
+            }}
+            className=" object-cover rounded-lg"
           />
         </div>
         <div className="flex flex-col justify-center lg:justify-around gap-5 flex-1">

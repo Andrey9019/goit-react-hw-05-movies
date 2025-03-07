@@ -55,7 +55,8 @@ export default function MoviesList({ movies }: MoviesProps) {
                         : defaultImg
                     }
                     alt={title}
-                    width="200"
+                    width={200}
+                    height={300}
                     className="object-cover w-full"
                   />
                   <div className="p-1 font-normal text-gray-700">
