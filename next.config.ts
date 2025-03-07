@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
         pathname: "/t/p/**",
         search: "",
       },
+      {
+        protocol: "https",
+        hostname: "img.freepik.com",
+        pathname: "/premium-vector/**",
+      },
     ],
   },
 };
