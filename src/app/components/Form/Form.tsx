@@ -5,11 +5,8 @@ import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import { mutate } from "swr";
 import { FaSearch } from "react-icons/fa";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 interface FormProps {
-  //   hasResults: boolean;
   initialQuery: string;
 }
 
@@ -26,7 +23,6 @@ const Form = ({ initialQuery }: FormProps) => {
       return;
     }
 
-    // Оновлюємо URL з новим запитом
     router.push(`/movie?query=${encodeURIComponent(inputValue)}`);
     mutate(["movie", inputValue]);
   };
@@ -54,17 +50,10 @@ const Form = ({ initialQuery }: FormProps) => {
             type="submit"
             className="border-none rounded-r-md cursor-pointer p-2"
           >
-            {/* <FontAwesomeIcon icon={faMagnifyingGlass} /> */}
             <FaSearch />
           </button>
         </div>
       </form>
-
-      {/* {!hasResults && ( // Відображаємо "No results", якщо результатів немає
-        <div className="text-center mt-5">
-          <p className="text-xl font-bold pt-5">No results</p>
-        </div>
-      )} */}
 
       <ToastContainer autoClose={4000} theme="colored" />
     </div>
